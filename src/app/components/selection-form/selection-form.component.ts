@@ -7,6 +7,8 @@ import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder }from '@angula
   styleUrls: ['./selection-form.component.css']
 })
 export class SelectionFormComponent implements OnInit {
+  currentStep = 1;
+  
   mainForm;
   // mainForm = new FormGroup({
   //   subForm1: new FormGroup({
@@ -41,6 +43,25 @@ export class SelectionFormComponent implements OnInit {
   onSubmit(value:any){
     let savedFormData = value;
     console.log(value);
+  }
+
+  previousfn($event) {
+    if (this.currentStep <= 1) {
+      return;
+    } else {
+      this.currentStep --
+      return;
+    }
+
+  }
+
+  nextfn($event){
+    if (this.currentStep >= 3) {
+      return;
+    } else {
+      this.currentStep ++
+      return;
+    }
   }
 
 }

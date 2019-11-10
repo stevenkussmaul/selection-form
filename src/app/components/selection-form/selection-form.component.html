@@ -1,9 +1,9 @@
 <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)">
 
 
-    <app-sub-form1 [parentForm]="mainForm.get('subForm1')"></app-sub-form1>
-    <app-sub-form2 [parentForm]="mainForm.get('subForm2')"></app-sub-form2>
-    <app-sub-form3 [parentForm]="mainForm.get('subForm3')"></app-sub-form3>
+    <app-sub-form1 *ngIf="currentStep==1" [parentForm]="mainForm.get('subForm1')"></app-sub-form1>
+    <app-sub-form2 *ngIf="currentStep==2" [parentForm]="mainForm.get('subForm2')"></app-sub-form2>
+    <app-sub-form3 *ngIf="currentStep==3" [parentForm]="mainForm.get('subForm3')"></app-sub-form3>
 
     <button type="button" class="btn btn-primary" (click)="previousfn($event)">previous</button>
     <button type="button" class="btn btn-primary" (click)="nextfn($event)">next</button>
