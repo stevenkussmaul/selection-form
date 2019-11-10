@@ -1,11 +1,15 @@
-<form [formGroup]="PizzaForm">
-    <div class="form-group">
-        <label for="pizzaSize">pizzaSize</label>
-        <input formControlName="pizzaSize" id="pizzaSize" type="text" class="form-control">
+<form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)">
+    <div formGroupName="subForm1">
+        <div class="form-group">
+            <label for="pizzaSize">pizzaSize</label>
+            <input formControlName="pizzaSize" id="pizzaSize" type="text" class="form-control">
+        </div>
     </div>
-    <div class="form-group">
-        <label for="pizzaShape">pizzaShape</label>
-        <input formControlName="pizzaShape" id="pizzaShape" type="text"  class="form-control">
+    <div formGroupName="subForm2">
+        <div class="form-group">
+            <label for="pizzaShape">pizzaShape</label>
+            <input formControlName="pizzaShape" id="pizzaShape" type="text"  class="form-control">
+        </div>
     </div>
     <button class="btn btn-primary">submit</button>
 </form>

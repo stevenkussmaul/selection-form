@@ -8,9 +8,16 @@ import { FormGroup, FormControl, ReactiveFormsModule }from '@angular/forms';
 })
 export class SelectionFormComponent implements OnInit {
 
-  pizzaForm = new FormGroup({
-    pizzaSize: new FormControl(),
-    pizzaShape: new FormControl()
+  mainForm = new FormGroup({
+    subForm1: new FormGroup({
+      pizzaSize: new FormControl(''),
+    }),
+    subForm2: new FormGroup({
+      pizzaShape: new FormControl('')
+    }),
+    subForm3: new FormGroup({
+      pizzaCrust: new FormControl('')
+    })
   });
 
 
