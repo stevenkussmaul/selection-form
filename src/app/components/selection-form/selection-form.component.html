@@ -1,22 +1,10 @@
 <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)">
-    <div formGroupName="subForm1">
-        <div class="form-group">
-            <label for="pizzaSize">pizzaSize</label>
-            <input formControlName="pizzaSize" id="pizzaSize" type="text" class="form-control">
-        </div>
-    </div>
-    <div formGroupName="subForm2">
-        <div class="form-group">
-            <label for="pizzaShape">pizzaShape</label>
-            <input formControlName="pizzaShape" id="pizzaShape" type="text"  class="form-control">
-        </div>
-    </div>
-    <div formGroupName="subForm3">
-            <div class="form-group">
-                <label for="pizzaCrust">pizzaCrust</label>
-                <input formControlName="pizzaCrust" id="pizzaCrust" type="text"  class="form-control">
-            </div>
-        </div>
+
+
+    <app-sub-form1 [parentForm]="mainForm.get('subForm1')"></app-sub-form1>
+    <app-sub-form2 [parentForm]="mainForm.get('subForm2')"></app-sub-form2>
+    <app-sub-form3 [parentForm]="mainForm.get('subForm3')"></app-sub-form3>
+
     <button type="button" class="btn btn-primary" (click)="previousfn($event)">previous</button>
     <button type="button" class="btn btn-primary" (click)="nextfn($event)">next</button>
     <button type="submit" class="btn btn-primary">submit</button>
