@@ -1,0 +1,15 @@
+.app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    width: 100%;
+    text-align: center;
+    margin:10% 0;
+    min-height: 200px;
+    /* background-color: rgba(33, 33, 33, .3); */
+    align-items: center;
+    border: 2px solid blue;
+    background-color: lightblue;
+
+}
