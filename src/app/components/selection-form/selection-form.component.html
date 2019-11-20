@@ -1,20 +1,25 @@
-<nav class="navbar navbar-dark bg-primary justify-content-center">
-        <p>Pizza Picker</p>
-      </nav>
-
 <section class="app-container">
 
-    <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)" class="main-form">
+    <section class="nav-container">
+        <nav class="navbar navbar-dark bg-primary justify-content-center">
+            <p>Pizza Picker</p>
+        </nav>
+    </section>
 
-        <section class="form-containter">
-            <app-sub-form1 *ngIf="currentStep==1" [parentForm]="mainForm.get('subForm1')" class="sub-form sub-form1"></app-sub-form1>
-            <app-sub-form2 *ngIf="currentStep==2" [parentForm]="mainForm.get('subForm2')" class="sub-form sub-form2"></app-sub-form2>
-            <app-sub-form3 *ngIf="currentStep==3" [parentForm]="mainForm.get('subForm3')" class="sub-form sub-form3"></app-sub-form3>
-        </section>
+    <section class="main-form-container">
 
-        <button type="button" class="btn btn-primary" (click)="previousfn($event)" *ngIf="currentStep!=1">previous</button>
-        <button type="button" class="btn btn-primary" (click)="nextfn($event)" *ngIf="currentStep!=3">next</button>
-        <button type="submit" class="btn btn-primary" *ngIf="currentStep==3">submit</button>
+        <form [formGroup]="mainForm" (ngSubmit)="onSubmit(mainForm.value)" class="main-form">
 
-    </form>
+            <section class="sub-containter">
+                <app-sub-form1 *ngIf="currentStep==1" [parentForm]="mainForm.get('subForm1')" class="sub-form sub-form1"></app-sub-form1>
+                <app-sub-form2 *ngIf="currentStep==2" [parentForm]="mainForm.get('subForm2')" class="sub-form sub-form2"></app-sub-form2>
+                <app-sub-form3 *ngIf="currentStep==3" [parentForm]="mainForm.get('subForm3')" class="sub-form sub-form3"></app-sub-form3>
+            </section>
+
+            <button type="button" class="btn btn-primary" (click)="previousfn($event)" *ngIf="currentStep!=1">previous</button>
+            <button type="button" class="btn btn-primary" (click)="nextfn($event)" *ngIf="currentStep!=3">next</button>
+            <button type="submit" class="btn btn-primary" *ngIf="currentStep==3">submit</button>
+
+        </form>
+    </section>
 </section>
